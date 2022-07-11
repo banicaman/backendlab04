@@ -59,7 +59,7 @@ class Server {
   }
 
   public start(): void {
-    this._app.listen(PORT || process.env.PORT, () => {
+    this._app.listen(process.env.PORT || PORT, () => {
       console.log(`Server running at port ${PORT}`)
     })
     try {
