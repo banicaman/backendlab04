@@ -20,6 +20,7 @@ const applyRoutes = (app: Application): void => {
     response({
       error: true,
       message: error,
+      method: 'NOT_FOUND',
       res,
       status: error.status ?? 400
     })

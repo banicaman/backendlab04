@@ -3,6 +3,7 @@ import morgan from 'morgan'
 import mongoose from 'mongoose'
 import cors from 'cors'
 import { applyRoutes } from './router'
+
 const PORT = 3000
 
 class Server {
@@ -15,6 +16,8 @@ class Server {
   }
 
   private config() {
+    const url = process.env.MONGO_URI as string
+    mongoose.connect(url).then(() => console.log('connect to Database'))
     this._app.use(morgan('dev'))
     this._app.use(express.json())
     this._app.use(express.urlencoded({ extended: false }))
@@ -45,10 +48,10 @@ class Server {
 
   private async _sequelize(): Promise<void> {
     try {
-      const uri =
-        'mongodb+srv://Hasser:v4quVbwB7TDLN@cluster0.4jglo.mongodb.net/?retryWrites=true&w=majority'
+      const uri = process.env.HOST
+
       // Connect to the MongoDB cluster
-      mongoose.connect(uri, () => console.log(' Mongoose is connected'))
+      // mongoose.connect(uri, () => console.log(' Mongoose is connected'))
 
       // console.log('Database connection established')
       // eslint-disable-next-line @typescript-eslint/no-explicit-any

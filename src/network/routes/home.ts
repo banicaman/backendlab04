@@ -8,6 +8,7 @@ Home.route('').get((req: Request, res: Response) => {
   response({
     error: false,
     message: 'Welcome Backend 01',
+    method: 'Home',
     res,
     status: 200
   })
