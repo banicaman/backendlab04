@@ -33,7 +33,7 @@ Items.route('/items').get((req: Request, res: Response) => {
       productGetone(data).then(data => {
         response({
           error: false,
-          server: 'Backend01',
+          server: 'Backend 01',
           message: data,
           method: 'Getone',
           res,
@@ -44,7 +44,7 @@ Items.route('/items').get((req: Request, res: Response) => {
       productGetAll().then(data => {
         response({
           error: false,
-          server: 'Backend01',
+          server: 'Backend 01',
           message: data,
           method: 'GetAll',
           res,
@@ -63,7 +63,7 @@ Items.route('/items').post((req: Request, res: Response) => {
     productCreate(data).then(data => {
       response({
         error: false,
-        server: 'Backend01',
+        server: 'Backend 01',
         message: data,
         method: 'Create',
         res,
@@ -82,7 +82,7 @@ Items.route('/items').put((req: Request, res: Response) => {
     productPut(data.title, data).then(data => {
       response({
         error: false,
-        server: 'Backend01',
+        server: 'Backend 01',
         message: data,
         method: 'Update Item',
         res,
