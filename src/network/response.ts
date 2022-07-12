@@ -1,5 +1,6 @@
 interface ResponseProps {
   error: boolean
+  server: string
   message: unknown
   method: string
   res: CustomResponse
@@ -8,12 +9,13 @@ interface ResponseProps {
 
 const response = ({
   error,
+  server,
   message,
   method,
   res,
   status
 }: ResponseProps): void => {
-  res.status(status).send({ error, method, message })
+  res.status(status).send({ error, server, method, message })
 }
 
 export { response }

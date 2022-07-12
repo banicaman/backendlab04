@@ -19,6 +19,7 @@ const applyRoutes = (app: Application): void => {
   app.use((error: any, req: Request, res: Response, next: NextFunction) => {
     response({
       error: true,
+      server: 'Backend01',
       message: error,
       method: 'NOT_FOUND',
       res,
